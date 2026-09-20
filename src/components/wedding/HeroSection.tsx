@@ -26,17 +26,24 @@ const HeroSection = () => {
     offset: ["start start", "end end"],
   });
 
-  const isMobile = window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Optimized spring physics for fluid inertia without micro-stutter
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Optimized spring physics tailored for touch gesture inertial scrolling on mobile
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 70,
-    damping: 24,
-    mass: 0.2,
+    stiffness: isMobile ? 120 : 70,
+    damping: isMobile ? 30 : 24,
+    mass: isMobile ? 0.1 : 0.2,
     restDelta: 0.0001,
   });
 
-  const activeProgress = isMobile ? scrollYProgress : smoothProgress;
+  const activeProgress = smoothProgress;
 
   // Uniform mapping across 240 frames
   const currentFrameIndex = useTransform(
@@ -176,7 +183,7 @@ const HeroSection = () => {
   }, [loaded, currentFrameIndex]);
 
   return (
-    <div ref={containerRef} className={`relative ${isMobile ? "h-[200vh]" : "h-[500vh]"} bg-wedding-dark`}>
+    <div ref={containerRef} className={`relative ${isMobile ? "h-[320vh]" : "h-[500vh]"} bg-wedding-dark`}>
       {/* Sticky wrapper */}
       <div className="sticky top-0 h-screen w-full overflow-hidden hero-gradient bg-black">
         
@@ -208,33 +215,33 @@ const HeroSection = () => {
           className="relative z-[20] flex flex-col items-center justify-center h-full text-center px-4"
         >
           {/* Bismillah & Islamic Blessing */}
-          <p className="font-subtext text-wedding-gold-light/90 text-sm sm:text-base md:text-xl mb-3 md:mb-4 tracking-widest drop-shadow-md font-medium">
+          <p className="font-subtext text-wedding-gold-light/90 text-sm sm:text-base md:text-xl mb-2 md:mb-4 tracking-widest drop-shadow-md font-medium">
             بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
           </p>
-          <p className="font-tamil text-wedding-gold-light/80 text-xs sm:text-sm md:text-base mb-3 md:mb-4 tracking-wider">
+          <p className="font-tamil text-wedding-gold-light/80 text-[11px] sm:text-sm md:text-base mb-3 md:mb-4 tracking-wider">
             இறைவனின் பேரருளால் நிகழும் திருமண நிஃகா
           </p>
 
-          <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-8 opacity-60">
-            <div className="w-8 md:w-12 h-[1px] bg-wedding-gold-light" />
-            <div className="w-2 h-2 rounded-full border border-wedding-gold-light" />
-            <div className="w-8 md:w-12 h-[1px] bg-wedding-gold-light" />
+          <div className="flex items-center gap-3 md:gap-6 mb-3 md:mb-8 opacity-60">
+            <div className="w-6 md:w-12 h-[1px] bg-wedding-gold-light" />
+            <div className="w-1.5 h-1.5 rounded-full border border-wedding-gold-light" />
+            <div className="w-6 md:w-12 h-[1px] bg-wedding-gold-light" />
           </div>
 
-          <div className="flex flex-col gap-1 md:gap-4 mb-4 md:mb-8">
-            <h1 className="font-display text-4xl sm:text-5xl md:text-8xl lg:text-9xl text-wedding-gold-light drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] tracking-[0.15em] md:tracking-[0.2em] uppercase">
+          <div className="flex flex-col gap-1 md:gap-4 mb-3 md:mb-8">
+            <h1 className="font-display text-3xl sm:text-5xl md:text-8xl lg:text-9xl text-wedding-gold-light drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] tracking-[0.12em] md:tracking-[0.2em] uppercase">
               The Groom
             </h1>
             <div className="flex items-center justify-center gap-4">
-              <span className="font-heading text-wedding-gold-light/60 text-base md:text-xl tracking-[0.5em] uppercase">Weds</span>
+              <span className="font-heading text-wedding-gold-light/60 text-xs sm:text-base md:text-xl tracking-[0.4em] uppercase">Weds</span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-8xl lg:text-9xl text-wedding-gold-light drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] tracking-[0.15em] md:tracking-[0.2em] uppercase">
+            <h1 className="font-display text-3xl sm:text-5xl md:text-8xl lg:text-9xl text-wedding-gold-light drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] tracking-[0.12em] md:tracking-[0.2em] uppercase">
               The Bride
             </h1>
           </div>
 
-          <div className="mt-2 md:mt-4 px-6 md:px-8 py-2 md:py-3 border-y border-wedding-gold-light/20 bg-black/40 backdrop-blur-md">
-            <p className="font-subtext text-wedding-ivory text-lg md:text-2xl tracking-[0.2em] md:tracking-[0.3em]">
+          <div className="mt-1 md:mt-4 px-5 md:px-8 py-1.5 md:py-3 border-y border-wedding-gold-light/20 bg-black/40 backdrop-blur-md">
+            <p className="font-subtext text-wedding-ivory text-sm sm:text-lg md:text-2xl tracking-[0.2em] md:tracking-[0.3em]">
               29 . 05 . 2026
             </p>
           </div>
