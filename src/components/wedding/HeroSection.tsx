@@ -35,15 +35,15 @@ const HeroSection = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Optimized spring physics tailored for touch gesture inertial scrolling on mobile
+  // Desktop gets luxury smooth spring physics; mobile uses 1:1 direct scroll binding to ensure touch scrolling is never blocked
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: isMobile ? 120 : 70,
-    damping: isMobile ? 30 : 24,
-    mass: isMobile ? 0.1 : 0.2,
+    stiffness: 70,
+    damping: 24,
+    mass: 0.2,
     restDelta: 0.0001,
   });
 
-  const activeProgress = smoothProgress;
+  const activeProgress = isMobile ? scrollYProgress : smoothProgress;
 
   // Uniform mapping across 240 frames
   const currentFrameIndex = useTransform(
