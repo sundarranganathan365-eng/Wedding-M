@@ -71,7 +71,7 @@ const FallingPetals = () => {
       phase: Math.random() * Math.PI * 2,
       scale: Math.random() * 0.08 + 0.04,
     })),
-  []);
+    []);
 
   useFrame((state) => {
     if (!ref.current) return;

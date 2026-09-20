@@ -1,18 +1,18 @@
 const events = [
   {
-    name: "Wedding Ceremony",
-    tamil: "கல்யாணம்",
+    name: "Nikah Ceremony",
+    tamil: "நிக்காஹ் முபாரக்",
     date: "May 29, 2026",
-    time: "7:30 AM",
-    venue: "Arulmigu Subramaniya Swamy Temple, Tiruchendur",
+    time: "10:30 AM",
+    venue: "Grand Jamia Masjid, Chennai",
     highlight: true
   },
   {
-    name: "Grand Reception",
-    tamil: "வரவேற்பு",
+    name: "Walima Reception",
+    tamil: "வலீமா வரவேற்பு",
     date: "May 31, 2026",
     time: "6:30 PM",
-    venue: "Thachanallur"
+    venue: "Imperial Royal Palace Hall, Chennai"
   },
 ];
 

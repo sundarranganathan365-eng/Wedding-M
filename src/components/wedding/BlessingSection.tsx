@@ -38,18 +38,7 @@ const BlessingSection = () => {
 const KolamDivider = () => (
   <div className="flex items-center justify-center gap-3 my-6">
     <div className="w-20 h-px bg-gradient-to-r from-transparent to-wedding-gold/40" />
-    <svg width="40" height="40" viewBox="0 0 40 40" className="text-wedding-gold/60">
-      <circle cx="20" cy="20" r="3" fill="currentColor" />
-      <circle cx="20" cy="8" r="2" fill="currentColor" />
-      <circle cx="20" cy="32" r="2" fill="currentColor" />
-      <circle cx="8" cy="20" r="2" fill="currentColor" />
-      <circle cx="32" cy="20" r="2" fill="currentColor" />
-      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
-      <circle cx="28" cy="12" r="1.5" fill="currentColor" />
-      <circle cx="12" cy="28" r="1.5" fill="currentColor" />
-      <circle cx="28" cy="28" r="1.5" fill="currentColor" />
-      <path d="M8 20 Q14 14 20 8 Q26 14 32 20 Q26 26 20 32 Q14 26 8 20Z" fill="none" stroke="currentColor" strokeWidth="0.5" />
-    </svg>
+    <span className="text-2xl text-wedding-gold/80">☪</span>
     <div className="w-20 h-px bg-gradient-to-l from-transparent to-wedding-gold/40" />
   </div>
 );

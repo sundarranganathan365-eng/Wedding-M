@@ -36,22 +36,22 @@
 
     --radius: 0.5rem;
 
-    /* Wedding-specific tokens */
-    --wedding-deep-red: 0 100% 12%;
-    --wedding-vermillion: 4 63% 46%;
-    --wedding-gold: 40 66% 48%;
-    --wedding-gold-light: 43 85% 70%;
-    --wedding-ivory: 43 67% 93%;
-    --wedding-cream: 40 70% 92%;
-    --wedding-maroon: 0 100% 15%;
-    --wedding-dark: 0 0% 5%;
+    /* Tamil Muslim Emerald & Gold Theme */
+    --wedding-deep-red: 160 85% 10%; /* Rich Deep Islamic Emerald */
+    --wedding-vermillion: 160 75% 20%; /* Emerald Green */
+    --wedding-gold: 42 75% 50%; /* Royal Gold */
+    --wedding-gold-light: 44 90% 70%; /* Light Brass Gold */
+    --wedding-ivory: 45 40% 95%; /* Cream Ivory */
+    --wedding-cream: 45 50% 90%;
+    --wedding-maroon: 160 90% 8%; /* Dark Forest Green */
+    --wedding-dark: 160 50% 4%;
 
-    --gradient-hero: linear-gradient(180deg, hsl(230 40% 5%) 0%, hsl(240 60% 8%) 50%, hsl(10 60% 15%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(40 66% 48%), hsl(43 85% 70%), hsl(40 66% 48%));
-    --gradient-section: linear-gradient(180deg, hsl(0 100% 12%) 0%, hsl(0 0% 5%) 100%);
-    --shadow-gold: 0 0 30px hsl(40 66% 48% / 0.3);
-    --shadow-glow: 0 0 60px hsl(40 66% 48% / 0.15);
-    --text-shadow-gold: 0 0 20px hsl(40 66% 48% / 0.5);
+    --gradient-hero: linear-gradient(180deg, hsl(160 60% 4%) 0%, hsl(160 70% 8%) 50%, hsl(160 80% 12%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 80% 55%), hsl(44 90% 72%), hsl(42 80% 50%));
+    --gradient-section: linear-gradient(180deg, hsl(160 85% 9%) 0%, hsl(160 50% 4%) 100%);
+    --shadow-gold: 0 0 30px hsl(42 75% 50% / 0.3);
+    --shadow-glow: 0 0 60px hsl(42 75% 50% / 0.15);
+    --text-shadow-gold: 0 0 20px hsl(42 75% 50% / 0.5);
 
     --font-display: 'Cinzel Decorative', serif;
     --font-heading: 'Cinzel', serif;

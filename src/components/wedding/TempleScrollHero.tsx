@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { useScroll, useSpring, useTransform, motion } from 'framer-motion';
 
-const FRAME_COUNT = 120;
-const FRAME_PREFIX = '/Frames /ezgif-frame-'; // Pointing to your Vite public/Frames folder
-const FRAME_SUFFIX = '.jpg';
+const FRAME_COUNT = 240;
+const FRAME_PREFIX = '/Frames/ezgif-frame-';
+const FRAME_SUFFIX = '.png';
 
 function getFrameUrl(index: number) {
   return `${FRAME_PREFIX}${index.toString().padStart(3, '0')}${FRAME_SUFFIX}`;
@@ -40,7 +40,7 @@ export default function TempleScrollHero() {
   const currentFrameIndex = useTransform(
     smoothProgress, 
     [0, 0.2, 0.6, 0.85, 1], 
-    [1, 24, 72, 108, FRAME_COUNT]
+    [1, 48, 144, 204, FRAME_COUNT]
   );
 
   // High-end cinematic text opacity maps matching story segments
