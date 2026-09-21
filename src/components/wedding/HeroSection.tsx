@@ -52,15 +52,15 @@ const HeroSection = () => {
     [1, FRAME_COUNT]
   );
 
-  // Typographic Opacity maps for the cinematic title
-  const titleOpacity = useTransform(activeProgress, [0, 0.08, 0.14], [1, 0.5, 0]);
-  const titleScale = useTransform(activeProgress, [0, 0.14], [1, 0.95]);
-  const titleY = useTransform(activeProgress, [0, 0.14], ["0%", "-30%"]);
+  // Typographic Opacity maps for the cinematic title (fades out gracefully)
+  const titleOpacity = useTransform(activeProgress, [0, 0.08, 0.18], [1, 0.5, 0]);
+  const titleScale = useTransform(activeProgress, [0, 0.18], [1, 0.95]);
+  const titleY = useTransform(activeProgress, [0, 0.18], ["0%", "-20%"]);
 
-  // Opacity maps for story text layers
-  const text1Opacity = useTransform(activeProgress, [0.18, 0.22, 0.4, 0.45], [0, 1, 1, 0]);
-  const text2Opacity = useTransform(activeProgress, [0.45, 0.5, 0.75, 0.8], [0, 1, 1, 0]);
-  const text3Opacity = useTransform(activeProgress, [0.85, 0.9, 1], [0, 1, 1]);
+  // Opacity maps for story text layers with full coverage across scroll progress
+  const text1Opacity = useTransform(activeProgress, [0.15, 0.25, 0.45, 0.55], [0, 1, 1, 0]);
+  const text2Opacity = useTransform(activeProgress, [0.50, 0.60, 0.75, 0.85], [0, 1, 1, 0]);
+  const text3Opacity = useTransform(activeProgress, [0.80, 0.88, 1.0], [0, 1, 1]);
 
   useEffect(() => {
     let isCancelled = false;
@@ -183,7 +183,7 @@ const HeroSection = () => {
   }, [loaded, currentFrameIndex]);
 
   return (
-    <div ref={containerRef} className={`relative ${isMobile ? "h-[320vh]" : "h-[500vh]"} bg-wedding-dark`}>
+    <div ref={containerRef} className={`relative ${isMobile ? "h-[200vh]" : "h-[250vh]"} bg-wedding-dark`}>
       {/* Sticky wrapper */}
       <div className="sticky top-0 h-screen w-full overflow-hidden hero-gradient bg-black">
         
