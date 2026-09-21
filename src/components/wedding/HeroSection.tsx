@@ -198,16 +198,16 @@ const HeroSection = () => {
         )}
 
         {/* Canvas Scrollytelling Pipeline */}
-        <div className="absolute inset-0 z-[2] w-full h-full overflow-hidden bg-[#0a0a0a]">
+        <div className="absolute inset-0 z-[2] w-full h-full overflow-hidden bg-wedding-dark">
           <canvas
             ref={canvasRef}
             className={`w-full h-full block transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           />
         </div>
 
-        {/* Night Gradients to blend UI */}
-        <div className="absolute inset-0 z-[3] bg-gradient-to-t from-wedding-dark via-transparent to-transparent pointer-events-none" />
-        <div className="absolute inset-0 z-[3] bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
+        {/* Night Gradients matching Emerald theme for 100% seamless section transition */}
+        <div className="absolute inset-0 z-[3] bg-gradient-to-t from-wedding-dark via-wedding-dark/30 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 z-[3] bg-gradient-to-b from-black/50 via-transparent to-transparent pointer-events-none" />
 
         {/* The Initial Main Content / Typography */}
         <motion.div
