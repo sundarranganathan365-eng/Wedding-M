@@ -1,6 +1,6 @@
 const BlessingSection = () => {
   return (
-    <section className="relative py-24 md:py-32 bg-background overflow-hidden">
+    <section className="relative py-24 md:py-32 section-gradient overflow-hidden">
       <div className="max-w-3xl mx-auto text-center px-4">
         <div className="reveal-on-scroll">
           {/* Sanskrit verse */}
